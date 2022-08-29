@@ -1,21 +1,25 @@
 <template>
-  <div>Seeni's App</div>
+  <password-generator />
 </template>
 
 <script>
+import PasswordGenerator from "@/components/PasswordGenerator.vue";
+
 export default {
-  name: 'App',
-  
-}
+  name: "App",
+  components: { PasswordGenerator },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  @apply font-mono w-screen h-screen flex items-center justify-center px-4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: linear-gradient(180deg, #14131b, #08070b 100%);
+}
+
+body {
+  background: #08070b;
 }
 </style>
