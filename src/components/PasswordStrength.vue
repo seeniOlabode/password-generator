@@ -1,9 +1,11 @@
 <template>
-  <div class="flex">
-    <h5 class="text-lg text-generator-almost-white mr-4 uppercase">
+  <div class="flex items-center">
+    <h5
+      class="sm:text-lg text-generator-almost-white mr-2 sm:mr-4 uppercase text-base"
+    >
       {{ message }}
     </h5>
-    <div class="flex">
+    <div class="flex" :style="{ 'background-color': 'none' }">
       <div class="strength-bar" :style="firstBarStyle"></div>
       <div class="strength-bar ml-2" :style="secondBarStyle"></div>
       <div class="strength-bar ml-2" :style="thirdBarStyle"></div>
@@ -60,7 +62,8 @@ export default {
     },
     firstBarStyle() {
       let output = {
-        "background-color": this.strength >= 1 ? this.strengthColor : false,
+        "background-color":
+          this.strength >= 1 ? this.strengthColor : "rgba(255,255,255,0)",
       };
       if (this.strength >= 1) {
         output.border = "none";
@@ -70,7 +73,8 @@ export default {
     },
     secondBarStyle() {
       let output = {
-        "background-color": this.strength >= 2 ? this.strengthColor : "none",
+        "background-color":
+          this.strength >= 2 ? this.strengthColor : "rgba(255,255,255,0)",
       };
       if (this.strength >= 2) {
         output.border = "none";
@@ -79,7 +83,8 @@ export default {
     },
     thirdBarStyle() {
       let output = {
-        "background-color": this.strength >= 3 ? this.strengthColor : "none",
+        "background-color":
+          this.strength >= 3 ? this.strengthColor : "rgba(255,255,255,0)",
       };
       if (this.strength >= 3) {
         output.border = "none";
@@ -88,7 +93,8 @@ export default {
     },
     fourthBarStyle() {
       let output = {
-        "background-color": this.strength >= 4 ? this.strengthColor : "none",
+        "background-color":
+          this.strength >= 4 ? this.strengthColor : "rgba(255,255,255,0)",
       };
       if (this.strength >= 4) {
         output.border = "none";

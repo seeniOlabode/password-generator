@@ -10,37 +10,37 @@
     <div>
       <div class="flex mb-4">
         <checkbox v-model="include.uppercase" />
-        <h6 class="ml-5 text-generator-almost-white text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Uppercase Letters
         </h6>
       </div>
       <div class="flex mb-4">
         <checkbox v-model="include.lowercase" />
-        <h6 class="ml-5 text-generator-almost-white text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Lowercase Letters
         </h6>
       </div>
 
       <div class="flex mb-4">
         <checkbox v-model="include.numbers" />
-        <h6 class="ml-5 text-generator-almost-white text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Numbers
         </h6>
       </div>
 
       <div class="flex">
         <checkbox v-model="include.symbols" />
-        <h6 class="ml-5 text-generator-almost-white text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Symbols
         </h6>
       </div>
     </div>
 
     <div
-      class="strength bg-generator-very-dark-grey p-4 mt-8 flex justify-between"
+      class="strength bg-generator-very-dark-grey p-4 mt-8 flex justify-between items-center"
     >
-      <h2 class="text-generator-grey">STRENGTH</h2>
-      <strength :strength="strength" />
+      <h2 class="text-generator-grey text-base sm:text-lg">STRENGTH</h2>
+      <strength :strength="strengthScore" />
     </div>
     <generate @generate="generate" />
   </div>
@@ -66,12 +66,40 @@ export default {
         numbers: true,
         symbols: false,
       },
-      strength: 4,
     };
   },
   methods: {
     generate() {
       store.setPassword(generatePassword(this.passwordLength, this.include));
+    },
+  },
+  computed: {
+    strengthScore() {
+      let score = 1;
+      if (
+        (this.passwordLength >= 15) & this.include.lowercase &&
+        this.include.uppercase &&
+        this.include.numbers
+      ) {
+        score += 1;
+      }
+      if (
+        this.passwordLength >= 20 &&
+        this.include.lowercase &&
+        this.include.uppercase &&
+        this.include.numbers
+      ) {
+        score += 2;
+      }
+      if (this.passwordLength >= 15 && this.include.symbols) {
+        score += 1;
+      }
+      if (score > 4) {
+        score = 4;
+      } else if (score < 1) {
+        score = 1;
+      }
+      return score;
     },
   },
 };
