@@ -1,8 +1,12 @@
 <template>
   <div class="bg-generator-dark-grey px-8 py-5">
     <div class="character-length flex justify-between items-center w-full">
-      <h4 class="text-generator-almost-white text-base">Character Length</h4>
-      <h2 class="text-generator-neon-green text-2xl">{{ passwordLength }}</h2>
+      <h4 class="text-generator-almost-white text-base sm:text-lg">
+        Character Length
+      </h4>
+      <h2 class="text-generator-neon-green text-2xl sm:text-4xl">
+        {{ passwordLength }}
+      </h2>
     </div>
 
     <slider v-model="passwordLength" />
@@ -10,13 +14,13 @@
     <div>
       <div class="flex mb-4">
         <checkbox v-model="include.uppercase" />
-        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-lg">
           Include Uppercase Letters
         </h6>
       </div>
       <div class="flex mb-4">
         <checkbox v-model="include.lowercase" />
-        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
+        <h6 class="ml-5 text-generator-almost-white text-sm sm:text-lg">
           Include Lowercase Letters
         </h6>
       </div>

@@ -3,7 +3,7 @@
     class="flex items-center justify-between bg-generator-dark-grey px-8 py-5"
   >
     <input
-      class="generator-input text-2xl text-generator-almost-white grow w-1/3"
+      class="generator-input text-2xl text-generator-almost-white grow w-1/3 sm:text-3xl"
       :value="store.password"
       placeholder="P4$5W0rD!"
       disabled

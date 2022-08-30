@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center">
     <h5
-      class="sm:text-lg text-generator-almost-white mr-2 sm:mr-4 uppercase text-base"
+      class="text-generator-almost-white mr-2 sm:mr-4 uppercase text-base sm:text-2xl"
     >
       {{ message }}
     </h5>
