@@ -4,7 +4,7 @@
   >
     <input
       class="generator-input text-2xl text-generator-almost-white grow w-1/3"
-      v-model="password"
+      :value="store.password"
       placeholder="P4$5W0rD!"
       disabled
       type="text"
@@ -18,11 +18,13 @@
 </template>
 
 <script>
+import { store } from "@/App.vue";
+
 export default {
   name: "TextField",
   data() {
     return {
-      password: "",
+      store: store,
       showCopied: false,
     };
   },

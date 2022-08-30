@@ -4,10 +4,24 @@
 
 <script>
 import PasswordGenerator from "@/components/PasswordGenerator.vue";
+import { reactive } from "vue";
+
+export const store = reactive({
+  password: "Bode",
+  setPassword(string) {
+    this.password = string;
+    console.log(this.password);
+  },
+});
 
 export default {
   name: "App",
   components: { PasswordGenerator },
+  data() {
+    return {
+      store: store,
+    };
+  },
 };
 </script>
 

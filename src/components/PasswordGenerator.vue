@@ -21,5 +21,6 @@ export default {
 
 <style scoped>
 #password-generator {
+  max-width: 540px;
 }
 </style>
