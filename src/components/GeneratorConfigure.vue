@@ -106,6 +106,9 @@ export default {
       return score;
     },
   },
+  mounted() {
+    this.generate();
+  },
 };
 </script>
 <style scoped></style>
