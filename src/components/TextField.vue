@@ -41,9 +41,6 @@ export default {
       navigator.clipboard.writeText(copyText.value);
       this.showCopied = true;
 
-      /* Alert the copied text */
-      console.log("Copied the text: " + copyText.value);
-
       setTimeout(() => {
         this.showCopied = false;
       }, 3000);

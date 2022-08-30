@@ -68,7 +68,6 @@ export default {
       if (this.strength >= 1) {
         output.border = "none";
       }
-      console.log(output, this.strength);
       return output;
     },
     secondBarStyle() {

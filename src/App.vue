@@ -10,7 +10,6 @@ export const store = reactive({
   password: "",
   setPassword(string) {
     this.password = string;
-    console.log(this.password);
   },
 });
 

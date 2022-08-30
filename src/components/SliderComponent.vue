@@ -25,8 +25,6 @@ export default {
   computed: {
     filledWidth() {
       let widthPercent = ((this.value - 7) / 18) * 100;
-      console.log(this.value);
-      console.log(widthPercent);
       return `calc(${widthPercent}% - 10px)`;
     },
     value: {
@@ -35,7 +33,6 @@ export default {
       },
       set(value) {
         this.$emit("update:modelValue", value);
-        console.log("here");
       },
     },
   },
