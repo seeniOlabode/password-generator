@@ -10,7 +10,11 @@
       type="text"
       id="generator-input"
     />
-    <button @click="copyToClipBoard" class="basis-auto flex items-center gap-4">
+    <button
+      :disabled="!store.passwordGenerated"
+      @click="copyToClipBoard"
+      class="basis-auto flex items-center gap-4"
+    >
       <span v-show="showCopied" class="text-generator-neon-green">COPIED</span>
       <img class="copy-icon" src="@/assets/icon-copy.svg" alt="" />
     </button>
