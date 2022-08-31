@@ -11,7 +11,7 @@ export const store = reactive({
   setPassword(string) {
     this.password = string;
   },
-  passwordGenerated: false,
+  passwordGenerated: true,
 });
 
 export default {
