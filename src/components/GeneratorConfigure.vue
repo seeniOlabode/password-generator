@@ -90,13 +90,11 @@ export default {
     generate() {
       let intervalCount = 0;
       store.passwordGenerated = false;
-      console.log(store.passwordGenerated);
       this.generateInterval = setInterval(() => {
         store.setPassword(generatePassword(this.passwordLength, this.include));
         intervalCount++;
         intervalCount >= 50 ? clearInterval(this.generateInterval) : "";
         intervalCount >= 50 ? (store.passwordGenerated = true) : "";
-        intervalCount >= 50 ? console.log(store.passwordGenerated) : "";
       }, 50);
     },
   },
