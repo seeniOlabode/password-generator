@@ -9,31 +9,43 @@
       </h2>
     </div>
 
-    <slider v-model="passwordLength" />
+    <slider :disable="store.passwordGenerated" v-model="passwordLength" />
 
     <div>
       <div class="flex mb-4">
-        <checkbox v-model="include.uppercase" />
+        <checkbox
+          :disable="store.passwordGenerated"
+          v-model="include.uppercase"
+        />
         <h6 class="ml-5 text-generator-almost-white text-sm sm:text-lg">
           Include Uppercase Letters
         </h6>
       </div>
       <div class="flex mb-4">
-        <checkbox v-model="include.lowercase" />
+        <checkbox
+          :disable="store.passwordGenerated"
+          v-model="include.lowercase"
+        />
         <h6 class="ml-5 text-generator-almost-white text-sm sm:text-lg">
           Include Lowercase Letters
         </h6>
       </div>
 
       <div class="flex mb-4">
-        <checkbox v-model="include.numbers" />
+        <checkbox
+          :disable="store.passwordGenerated"
+          v-model="include.numbers"
+        />
         <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Numbers
         </h6>
       </div>
 
       <div class="flex">
-        <checkbox v-model="include.symbols" />
+        <checkbox
+          :disable="store.passwordGenerated"
+          v-model="include.symbols"
+        />
         <h6 class="ml-5 text-generator-almost-white text-sm sm:text-base">
           Include Symbols
         </h6>
@@ -71,6 +83,7 @@ export default {
         symbols: false,
       },
       generateInterval: "",
+      store: store,
     };
   },
   methods: {

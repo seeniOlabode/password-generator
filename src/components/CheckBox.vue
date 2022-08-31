@@ -7,8 +7,9 @@
         :id="value"
         :value="value"
         :checked="modelValue"
+        :disabled="!disable"
       />
-      <span class="box">
+      <span :class="['box', { 'hover:cursor-pointer': disable }]">
         <img src="@/assets/icon-check.svg" alt="" />
       </span>
     </label>
@@ -18,7 +19,7 @@
 <script>
 export default {
   name: "CheckBox",
-  props: ["modelValue", "value"],
+  props: ["modelValue", "value", "disable"],
   emits: ["update:modelValue"],
   methods: {
     emitValue($event) {
@@ -47,7 +48,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  @apply hover:cursor-pointer border-solid border-2 border-generator-almost-white;
+  @apply border-solid border-2 border-generator-almost-white;
 }
 
 .box img {

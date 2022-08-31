@@ -10,9 +10,17 @@
       type="range"
       min="8"
       max="25"
-      class="slider absolute left-0 right-0"
+      :class="[
+        'slider',
+        'absolute',
+        'left-0',
+        'right-0',
+        { 'thumb-hover': disable },
+        { 'thumb-cursor': disable },
+      ]"
       id="myRange"
       v-model="value"
+      :disabled="!disable"
     />
   </div>
 </template>
@@ -20,7 +28,7 @@
 <script>
 export default {
   name: "SliderComponent",
-  props: ["modelValue"],
+  props: ["modelValue", "disable"],
   emits: ["update:modelValue"],
   computed: {
     filledWidth() {
@@ -68,22 +76,27 @@ export default {
   appearance: none;
   width: 28px; /* Set a specific slider handle width */
   height: 28px; /* Slider handle height */
-  cursor: pointer; /* Cursor on hover */
   @apply rounded-full bg-generator-almost-white;
 }
-
-.slider::-webkit-slider-thumb:hover {
+.thumb-hover::-webkit-slider-thumb:hover {
   @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
+}
+
+.thumb-cursor::-webkit-slider-thumb {
+  cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   @apply bg-generator-almost-white rounded-full border-0;
+}
+
+.thumb-cursor::-moz-range-thumb {
   cursor: pointer; /* Cursor on hover */
 }
 
-.slider::-moz-range-thumb:hover {
+.thumb-hover::-moz-range-thumb:hover {
   @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
 }
 </style>
