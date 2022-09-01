@@ -60,12 +60,12 @@ export default {
   height: 8px; /* Specified height */
   outline: none; /* Remove outline */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
-  transition: opacity 0.2s;
+  /* transition: opacity 0.2s; */
   @apply bg-none;
   background: none;
 }
 
-/* Mouse-over effects */
+/* Mouse-over effects  */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
 }
@@ -77,6 +77,8 @@ export default {
   width: 28px; /* Set a specific slider handle width */
   height: 28px; /* Slider handle height */
   @apply rounded-full bg-generator-almost-white;
+  background: rgb(230 229 234 / var(--tw-bg-opacity));
+  opacity: 1;
 }
 .thumb-hover::-webkit-slider-thumb:hover {
   @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
@@ -90,6 +92,8 @@ export default {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   @apply bg-generator-almost-white rounded-full border-0;
+  background: rgb(230 229 234 / var(--tw-bg-opacity));
+  opacity: 1;
 }
 
 .thumb-cursor::-moz-range-thumb {
