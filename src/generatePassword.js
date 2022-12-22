@@ -19,7 +19,7 @@ const generatePassword = (length, includeObject) => {
   if (includeObject.symbols) {
     includedCharacters += characterObject.symbols;
   }
-  for (var i = 0; i <= length; i++) {
+  for (var i = 0; i < length; i++) {
     var randomNumber = Math.floor(Math.random() * includedCharacters.length);
     password += includedCharacters.substring(randomNumber, randomNumber + 1);
   }

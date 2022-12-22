@@ -80,7 +80,12 @@ export default {
   background: rgb(230 229 234 / var(--tw-bg-opacity));
   opacity: 1;
 }
+
 .thumb-hover::-webkit-slider-thumb:hover {
+  @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
+}
+
+.slider::-webkit-slider-thumb:hover {
   @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
 }
 
@@ -88,9 +93,13 @@ export default {
   cursor: pointer; /* Cursor on hover */
 }
 
+.slider::-webkit-slider-thumb {
+  cursor: pointer; /* Cursor on hover */
+}
+
 .slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  width: 28px; /* Set a specific slider handle width */
+  height: 28px; /* Slider handle height */
   @apply bg-generator-almost-white rounded-full border-0;
   background: rgb(230 229 234 / var(--tw-bg-opacity));
   opacity: 1;
@@ -100,7 +109,15 @@ export default {
   cursor: pointer; /* Cursor on hover */
 }
 
+.slider::-moz-range-thumb {
+  cursor: pointer; /* Cursor on hover */
+}
+
 .thumb-hover::-moz-range-thumb:hover {
+  @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
+}
+
+.slider::-moz-range-thumb:hover {
   @apply bg-generator-very-dark-grey border-2 border-solid border-generator-neon-green;
 }
 </style>
